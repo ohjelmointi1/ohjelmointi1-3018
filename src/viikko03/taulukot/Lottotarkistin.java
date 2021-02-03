@@ -15,7 +15,7 @@ public class Lottotarkistin {
             oikeaRivi[i] = lukija.nextInt();
         }
         // tässä vaiheessa scannerissa on odottamassa tyhjä rivinvaihto,
-        // se voidaan lukea pois nextLine-metodilla:
+        // katso https://stackoverflow.com/a/13102066 seuraavan rivin selitykseksi
         lukija.nextLine();
 
         System.out.println();
