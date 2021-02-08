@@ -5,8 +5,11 @@ import java.util.Random;
 public class Salasana {
 
     public static void main(String[] args) {
+        System.out.println(generoiSalasana(64));
+    }
+
+    public static String generoiSalasana(int pituus) {
         Random satunnaisGeneraattori = new Random();
-        int pituus = 64;
 
         // koostuu satunnaisista kirjaimista a-z, A-Z, 0-9 ja joistakin erikoismerkeistä
         String pienetKirjaimet = "abcdefghijklmnopqrstuvwxyzåäö";
@@ -24,6 +27,6 @@ public class Salasana {
             salasana = salasana + satunnainenMerkki;
         }
 
-        System.out.println(salasana);
+        return salasana;
     }
 }
