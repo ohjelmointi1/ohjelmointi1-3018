@@ -6,9 +6,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class Myohastymismaksu {
-    final static int LAINA_AIKA = 28;
-    final static double MYOHASTYMISMAKSU_PV = 0.2;
-    final static int MYOHASTYMISMAKSU_MAX = 6;
+    static final int LAINA_AIKA = 28;
+    static final double MYOHASTYMISMAKSU_PV = 0.2;
+    static final int MYOHASTYMISMAKSU_MAX = 6;
 
     public static void main(String[] args) {
         DateTimeFormatter muotoilu = DateTimeFormatter.ofPattern("d.M.yyyy");
