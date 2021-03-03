@@ -13,7 +13,7 @@ public class Henkilotieto {
 
     public Henkilotieto(String nimi, int paiva, int kuukausi, int vuosi) {
         this.nimi = nimi;
-        this.syntymapaiva = LocalDate.of(vuosi, kuukausi, paiva);
+        this.setSyntymaAika(paiva, kuukausi, vuosi);
     }
 
     public String getNimi() {
@@ -30,10 +30,14 @@ public class Henkilotieto {
 
     public void setSyntymaAika(int paiva, int kuukausi, int vuosi) {
         LocalDate syntyma = LocalDate.of(vuosi, kuukausi, paiva);
-        if (!syntyma.isAfter(LocalDate.now())) {
-            this.syntymapaiva = syntyma;
+        LocalDate tanaan = LocalDate.now();
+
+        if (syntyma.isAfter(tanaan)) {
+            IllegalArgumentException poikkeus = new IllegalArgumentException(
+                    "Syntymäpäivä ei voi olla tulevaisuudessa!");
+            throw poikkeus;
         } else {
-            // TODO: Heitä poikkeus?
+            this.syntymapaiva = syntyma;
         }
     }
 
