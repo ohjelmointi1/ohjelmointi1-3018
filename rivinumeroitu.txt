@@ -1,0 +1,41 @@
+1:  package viikko07.tiedostot;
+2:  
+3:  import java.io.IOException;
+4:  import java.nio.charset.StandardCharsets;
+5:  import java.nio.file.Files;
+6:  import java.nio.file.Path;
+7:  import java.nio.file.Paths;
+8:  import java.util.ArrayList;
+9:  import java.util.List;
+10: 
+11: public class KooditiedostonRivinumerot {
+12:     private static Path polku = Paths.get("src", "viikko07", "tiedostot", "KooditiedostonRivinumerot.java");
+13: 
+14:     public static void main(String[] args) {
+15:         List<String> rivit = lueTiedosto();
+16:         List<String> rivitNumeroituna = lisaaRivinumerot(rivit);
+17: 
+18:         for (String r : rivitNumeroituna) {
+19:             System.out.println(r);
+20:         }
+21:     }
+22: 
+23:     public static List<String> lueTiedosto() {
+24:         try {
+25:             List<String> rivit = Files.readAllLines(polku, StandardCharsets.UTF_8);
+26:             return rivit;
+27:         } catch (IOException e) {
+28:             System.err.println("Tiedoston lukeminen epäonnistui: " + e.getMessage());
+29:             return new ArrayList<String>();
+30:         }
+31:     }
+32: 
+33:     public static List<String> lisaaRivinumerot(List<String> rivit) {
+34:         List<String> numeroidut = new ArrayList<>();
+35:         for (int i = 0; i < rivit.size(); i++) {
+36:             String alku = ((i + 1) + ":  ").substring(0, 4);
+37:             numeroidut.add(alku + rivit.get(i));
+38:         }
+39:         return numeroidut;
+40:     }
+41: }

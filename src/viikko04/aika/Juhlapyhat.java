@@ -22,6 +22,7 @@ public class Juhlapyhat {
         tulostaJuhlapyha("Vappu", LocalDate.of(vuosi, 5, 1));
         tulostaJuhlapyha("Helatorstai", laskeHelatorstai(vuosi));
         tulostaJuhlapyha("Helluntai", laskeHelluntai(vuosi));
+        tulostaJuhlapyha("Naistenpäivä", LocalDate.of(vuosi, 3, 8));
         // TODO: lisää juhannus yms. puuttuvat päivät
     }
 
