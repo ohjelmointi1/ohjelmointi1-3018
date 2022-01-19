@@ -19,7 +19,7 @@ public class TrueJaFalse {
         int ika = 25;
 
         boolean taysiIkainen = (ika >= 18);
-        boolean palvelusIkainen = taysiIkainen && (ika <= 28);
+        boolean palvelusIkainen = taysiIkainen && (ika < 30);
 
         System.out.println("Täysi-ikäinen: " + taysiIkainen);
         System.out.println("Palvelusikäinen: " + palvelusIkainen);
