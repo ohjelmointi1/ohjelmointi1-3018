@@ -27,7 +27,7 @@ public class TrueJaFalse {
 
         System.out.println();
 
-        String nimi = "Henni";
+        String nimi = "Senja";
         String nimipaivasankarit = "Heikki, Henri, Henna, Henrik, Henni, Henriikka ja Henrikki";
 
         boolean onNimipaiva = nimipaivasankarit.contains(nimi);
