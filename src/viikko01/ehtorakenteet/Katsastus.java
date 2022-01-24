@@ -20,12 +20,12 @@ public class Katsastus {
             System.out.println("0: ei ");
             System.out.println("1: kyllä ");
 
-            int päästöt = lukija.nextInt();
+            int paastot = lukija.nextInt();
 
-            if (päästöt == 0) {
+            if (paastot == 0) {
                 System.out.println("Hinta on 50 euroa");
 
-            } else if (päästöt == 1) {
+            } else if (paastot == 1) {
                 System.out.println("Valitse polttoaineen tyyppi:");
                 System.out.println("0: bensa ");
                 System.out.println("1: diesel ");
