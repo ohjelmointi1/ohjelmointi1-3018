@@ -1,32 +1,34 @@
 package viikko05.ruokakauppa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class KauppaOhjelma {
 
     public static void main(String[] args) {
 
-        Tuote juustoviipaleet = new Tuote();
-        juustoviipaleet.nimi = "Juustoviipaleet";
-        juustoviipaleet.hinta = 3.59;
-        juustoviipaleet.paino = 0.5;
+        Tuote juustoviipaleet = new Tuote("Juustoviipaleet", 3.59, 0.5);
+        TuoteKuva viipalekuva = new TuoteKuva(1200, 1200, "viipaleet.jpg", "Juustoviipaleet");
+        juustoviipaleet.setKuva(viipalekuva);
 
         Tuote juustokimpale = new Tuote();
-        juustokimpale.nimi = "Kermajuusto";
-        juustokimpale.hinta = 6.39;
-        juustokimpale.paino = 1.0;
+        juustokimpale.setNimi("Kermajuusto");
+        juustokimpale.setHinta(6.39);
+        juustokimpale.setPaino(1.0);
 
         Tuote homejuusto = new Tuote();
-        homejuusto.nimi = "Homejuusto pala";
-        homejuusto.hinta = 2.89;
-        homejuusto.paino = 0.17;
+        homejuusto.setNimi("Homejuustopala");
+        homejuusto.setHinta(2.89);
+        homejuusto.setPaino(0.17);
 
         // Tulostetaan tuotteiden tiedot:
-        // (Java kutsuu toString-metodia taustalla)
-        System.out.println(juustoviipaleet);
-        System.out.println(juustokimpale);
-        System.out.println(homejuusto);
+        List<Tuote> tuotteet = new ArrayList<>();
+        tuotteet.add(juustoviipaleet);
+        tuotteet.add(juustokimpale);
+        tuotteet.add(homejuusto);
 
-        if (juustokimpale.onHalvempiKilohinta(homejuusto)) {
-            System.out.println(juustokimpale.nimi + " on halvempi kuin " + homejuusto.nimi);
+        for (Tuote t : tuotteet) {
+            System.out.println(t.toHtml());
         }
     }
 }
