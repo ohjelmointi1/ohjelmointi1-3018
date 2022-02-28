@@ -18,10 +18,11 @@ public class PyhapaivaOhjelma {
 
         Pyhapaiva tanaan = new Pyhapaiva("Kalevalan päivä", "2022-02-28");
 
-        System.out.println("Vertaillaan kahta erilaista:");
+        System.out.println("Vertaillaan kahta erilaista (kalevala ja laskiainen):");
         System.out.println(kalevalanPaiva.equals(laskiaisTiistai));
 
         System.out.println("Löytyykö tämä päivä? " + tanaan);
         System.out.println(paivat.contains(tanaan));
+        System.out.println("Kalevalan päivän indeksi: " + paivat.indexOf(tanaan));
     }
 }

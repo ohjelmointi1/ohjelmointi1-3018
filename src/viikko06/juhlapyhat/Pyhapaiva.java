@@ -12,12 +12,11 @@ public class Pyhapaiva {
 
     @Override
     public boolean equals(Object toinen) {
-        if (toinen.getClass() != this.getClass()) {
-            return false;
+        if (toinen instanceof Pyhapaiva) {
+            Pyhapaiva toinenPaiva = (Pyhapaiva) toinen;
+            return this.nimi.equals(toinenPaiva.nimi) && this.pvm.equals(toinenPaiva.pvm);
         } else {
-            String tamaStr = this.toString();
-            String toinenStr = toinen.toString();
-            return toinenStr.equals(tamaStr);
+            return false;
         }
     }
 
