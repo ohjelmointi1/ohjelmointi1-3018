@@ -1,13 +1,21 @@
 package viikko06.juhlapyhat;
 
+import java.time.LocalDate;
+
 public class Pyhapaiva {
 
     private String nimi;
-    private String pvm;
+    private LocalDate pvm;
 
-    public Pyhapaiva(String nimi, String pvm) {
+    public Pyhapaiva(String nimi, String pvmString) {
         this.nimi = nimi;
-        this.pvm = pvm;
+        this.pvm = LocalDate.parse(pvmString);
+    }
+
+    public int vertaile(Pyhapaiva toinen) {
+        // negatiivista, nolla tai positiivista riippuen siitä, onko
+        // tämä pvm ennen, sama tai jälkeen toisen päivän
+        return this.pvm.compareTo(toinen.pvm);
     }
 
     @Override

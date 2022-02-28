@@ -1,6 +1,7 @@
 package viikko06.juhlapyhat;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PyhapaivaOhjelma {
@@ -8,11 +9,17 @@ public class PyhapaivaOhjelma {
     public static void main(String[] args) {
         Pyhapaiva kalevalanPaiva = new Pyhapaiva("Kalevalan päivä", "2022-02-28");
         Pyhapaiva laskiaisTiistai = new Pyhapaiva("Laskiaistiistai", "2022-03-01");
+        Pyhapaiva jouluaatto = new Pyhapaiva("Jouluaatto", "2022-12-24");
 
         List<Pyhapaiva> paivat = new ArrayList<>();
 
+        paivat.add(jouluaatto);
         paivat.add(kalevalanPaiva);
         paivat.add(laskiaisTiistai);
+
+        System.out.println(paivat);
+
+        Collections.sort(paivat, Pyhapaiva::vertaile);
 
         System.out.println(paivat);
 
