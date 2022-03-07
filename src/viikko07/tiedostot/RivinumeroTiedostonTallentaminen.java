@@ -1,7 +1,6 @@
 package viikko07.tiedostot;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,7 +14,7 @@ public class RivinumeroTiedostonTallentaminen {
 
         try {
             Path polku = Paths.get("rivinumeroitu.txt");
-            Files.write(polku, numeroidut, StandardCharsets.UTF_8);
+            Files.write(polku, numeroidut);
             System.out.println("Tiedosto " + polku.toAbsolutePath() + " kirjoitettiin onnistuneesti!");
 
         } catch (IOException e) {
